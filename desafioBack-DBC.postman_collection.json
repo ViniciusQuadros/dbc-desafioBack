@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "bb8a30ff-2eec-4678-96c1-08c2c69f6f30",
+		"name": "desafioBack-DBC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13332900"
+	},
+	"item": [
+		{
+			"name": "POST User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vinicius Quadros\",\r\n    \"document\": \"12345678901\",\r\n    \"email\": \"viniciusquadros@gmail.com\",\r\n    \"userType\": \"ASSOCIATE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Agenda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Troca de piso no salão principal\",\r\n    \"description\": \"Será trocado o piso do salão principal para um piso de porcelanato\",\r\n    \"voteDurationTimeInMinutes\": 60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/agendas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agendas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Troca de piso no salão principal\",\r\n    \"description\": \"Será trocado o piso do salão principal para um piso de porcelanato\",\r\n    \"voteDurationTimeInMinutes\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/agendas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agendas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Dec 2023 07:48:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Troca de piso no salão principal\",\n    \"description\": \"Será trocado o piso do salão principal para um piso de porcelanato\",\n    \"startVotingTimestamp\": \"2023-12-08T04:48:28.1546737\",\n    \"endVotingTimestamp\": \"2023-12-08T05:48:28.1546737\",\n    \"votes\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Agenda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/agendas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agendas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Vote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"voterId\": 1,\r\n    \"agendaId\": 1,\r\n    \"voteValue\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/votes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"votes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
