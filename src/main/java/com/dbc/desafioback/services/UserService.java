@@ -26,6 +26,9 @@ public class UserService {
         if(!user.getUserType().equals(UserType.ASSOCIATE)){
             throw new Exception("Usuário não é associado");
         }
+        if(!validateVoter(user)){
+            throw new Exception("Usuário não pode votar");
+        }
     }
 
     public User findUserById(Long id) throws Exception {

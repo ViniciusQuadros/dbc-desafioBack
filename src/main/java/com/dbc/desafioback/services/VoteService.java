@@ -21,7 +21,6 @@ public class VoteService {
     private VoteRepository voteRepository;
 
     public void createVote(VoteDto voteDto) throws Exception{
-        //Agenda agenda = agendaService.findAgendaById(voteDto.agendaId());
 
         Agenda agenda = agendaService.findAgendaById(voteDto.agendaId());
         User user = userService.findUserById(voteDto.voterId());
@@ -31,6 +30,8 @@ public class VoteService {
         if(hasUserAlreadyVoted){
             throw new Exception("Usuário já votou nessa pauta");
         }
+
+        userService.validateVotingUser(user);
 
         Vote vote = new Vote(user, agenda, voteDto.voteValue());
         agenda.getVotes().add(vote);
